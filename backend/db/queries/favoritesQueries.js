@@ -47,6 +47,8 @@ const getAllFavoritesForOneUser = (req, res, next) => {
 };
 
 const createNewFavorite = (req, res, next) => {
+  req.body.user_id = parseInt(req.body.user_id);
+  req.body.song_id = parseInt(req.body.song_id);
   db.none(
   'INSERT INTO favorites (user_id, song_id) VALUES (${user_id}, ${song_id})',
   req.body)

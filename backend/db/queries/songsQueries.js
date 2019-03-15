@@ -64,6 +64,8 @@ const getSingleSong = (req, res, next) => {
 
 
 const createNewSong = (req, res, next) => {
+  req.body.user_id = parseInt(req.body.user_id);
+  req.body.genre_id = parseInt(req.body.genre_id);
   db.none(
   'INSERT INTO songs (title, img_url, user_id, genre_id) VALUES (${title}, ${img_url}, ${user_id}, ${genre_id})',
   req.body)
