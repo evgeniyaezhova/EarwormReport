@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import AllSongs from "./components/AllSongs";
 import './App.css';
 
 class App extends Component {
@@ -10,6 +11,7 @@ class App extends Component {
       <div className="App">
       <NavBar />
         <Switch>
+        <Route path="/songs" component={AllSongs} />
         <Route exact path="/" component={Home} />
         </Switch>
       </div>
