@@ -1,9 +1,9 @@
 import React from "react";
 
-const DisplayAllSongs = ({ allSongs }) => {
+const DisplayAllSongs = ({ allSongs, allFavorites }) => {
   let displaysongs = allSongs.map((song, i) => {
     return (
-      <div className="allSongsList" key={i}>
+      <div className="singleSongDiv" key={i}>
       <ul>
       <li>
       Title: {song.title}
