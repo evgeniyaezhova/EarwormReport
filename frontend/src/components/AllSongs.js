@@ -19,7 +19,6 @@ class AllSongs extends React.Component {
 
   componentDidMount = () => {
     this.getAllSongs()
-    this.getAllFavorites()
   }
 
   getAllSongs = () => {
@@ -33,16 +32,16 @@ class AllSongs extends React.Component {
     })
   }
 
-  getAllFavorites = () => {
-    axios
-    .get("/favorites")
-    .then(res => {
-
-      this.setState({
-        allFavorites:res.data.favorites
-      })
-    })
-  }
+  // getAllFavoritesForOneSong = () => {
+  //   axios
+  //   .get("/favorites" + id)
+  //   .then(res => {
+  //
+  //     this.setState({
+  //       allFavorites:res.data.favorites
+  //     })
+  //   })
+  // }
 
   handleChange = (e) => {
   this.setState({

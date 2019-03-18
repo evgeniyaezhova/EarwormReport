@@ -1,6 +1,7 @@
 const { db } = require('../index');
 
 const getAllSongs = (req, res, next) => {
+
   db.any('SELECT title, img_url, username FROM songs JOIN users ON songs.user_id = users.id')
     .then(songs => {
       res.status(200).json({
@@ -48,7 +49,7 @@ const getAllSongsByOneUser = (req, res, next) => {
 
 const getSingleSong = (req, res, next) => {
   let songId = parseInt(req.params.id);
-  db.one('SELECT * FROM songs WHERE id=$1', [songId])
+  db.one('SELECT title, img_url, username, COUNT(song_id) FROM songs JOIN users ON songs.user_id = users.id JOIN favorites ON songs.id = favorites.song_id WHERE songs.id=$1', [songId])
   .then(song => {
     res.status(200)
     .json({

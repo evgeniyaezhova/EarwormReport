@@ -16,7 +16,7 @@ const getAllFavorites = (req, res, next) => {
 
 const getAllFavoritesForOneSong = (req, res, next) => {
   let songId = parseInt(req.params.id);
-  db.any('SELECT * FROM favorites WHERE song_id=$1', [songId])
+  db.any('SELECT COUNT(id) FROM favorites WHERE song_id=$1', [songId])
   .then(favorites => {
     res.status(200)
     .json({
