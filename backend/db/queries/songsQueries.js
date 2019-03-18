@@ -1,7 +1,7 @@
 const { db } = require('../index');
 
 const getAllSongs = (req, res, next) => {
-  db.any('SELECT * FROM songs')
+  db.any('SELECT title, img_url, username FROM songs JOIN users ON songs.user_id = users.id')
     .then(songs => {
       res.status(200).json({
         status: "success!",

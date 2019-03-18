@@ -77,7 +77,7 @@ handleSubmit = (e) => {
       <div className="allSongs">
       <h1>ALL SONGS</h1>
       <form onSubmit={this.handleSubmit}>
-      <input type="text" value={this.state.formInput} onChange={this.handleChange} placeholder="Find Your Person" className="searchBar"/>
+      <input type="text" value={this.state.formInput} onChange={this.handleChange} placeholder="Search for a song" className="searchBar"/>
           <input type="submit" value="Search"/>
       </form>
       {this.state.requestedSong ? <DisplaySingleSong requestedSong={this.state.requestedSong}/> :   <DisplayAllSongs allSongs={this.state.allSongs} allFavorites={this.state.allFavorites}/> }
