@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi|Permanent+Marker|Prompt');
+
+.welcome {
+  background-color: #621389;
+  height: 100%;
+  padding-bottom: 600px;
+  margin-top: 0;
+}
+
+.earwormText {
+  margin: 0;
+  padding-top: 200px;
+  font-size: 45px;
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+}
