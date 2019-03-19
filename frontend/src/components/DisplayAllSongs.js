@@ -19,9 +19,7 @@ const DisplayAllSongs = ({ allSongs, allComments }) => {
         if(comment.song_id === song.id){
           return (
             <div key={i}>
-            
-            <br />
-            {comment.comment_body }
+            {comment.username}: {comment.comment_body }
             <br/>
             </div>
           )
