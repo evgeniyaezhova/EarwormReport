@@ -22,7 +22,7 @@ class AllSongs extends React.Component {
     axios
     .get("/songs")
     .then(res => {
-
+console.log("this is ALLSONGS: ", res.data.songs)
       this.setState({
         allSongs:res.data.songs
       })
@@ -53,9 +53,9 @@ handleSubmit = (e) => {
              this.setState({ requestedSong: "Not Found" })
          }
   }
-  // this.setState({
-  //   formInput: ""
-  // })
+  this.setState({
+    formInput: ""
+  })
 }
 
 
@@ -64,7 +64,6 @@ handleSubmit = (e) => {
     return(
       <div className="allSongs">
       <h1>ALL SONGS</h1>
-
       <h2>Search By Title</h2>
       <form onSubmit={this.handleSubmit}>
       <input type="text" value={this.state.formInput} onChange={this.handleChange} placeholder="Search by Title" className="searchBar"/>

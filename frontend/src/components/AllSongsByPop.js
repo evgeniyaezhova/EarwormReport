@@ -6,7 +6,8 @@ class AllSongsByPop extends React.Component {
   constructor(){
     super()
     this.state = {
-      allSongs: []
+      allSongs: [],
+      allComments: []
     }
   }
 
@@ -18,16 +19,27 @@ class AllSongsByPop extends React.Component {
     axios
     .get("/songs/bypop")
     .then(res => {
-
+// debugger
       this.setState({
         allSongs:res.data.songs
       })
     })
   }
 
+  // getAllComments = () => {
+  //   axios
+  //   .get("/comments")
+  //   .then(res => {
+  //
+  //     this.setState({
+  //       allComments:res.data.comments
+  //     })
+  //   })
+  // }
+
 
   render(){
-
+// debugger
     return(
       <div className="allSongsByPop">
       <h1>ALL SONGS BY POPULARITY</h1>
