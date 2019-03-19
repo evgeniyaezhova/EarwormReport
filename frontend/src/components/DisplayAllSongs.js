@@ -1,6 +1,6 @@
 import React from "react";
 
-const DisplayAllSongs = ({ allSongs }) => {
+const DisplayAllSongs = ({ allSongs, allComments }) => {
   let displaysongs = allSongs.map((song, i) => {
     // console.log("this is SONG: ", song)
     return (
@@ -15,7 +15,22 @@ const DisplayAllSongs = ({ allSongs }) => {
       <br/>
       User: {song.username}
       <br/>
+      Comments: { allComments.map((comment, i) => {
+        if(comment.song_id === song.id){
+          return (
+            <div key={i}>
+            
+            <br />
+            {comment.comment_body }
+            <br/>
+            </div>
+          )
+        }
+      }
+
+    )}
       </div>
+
     )
   })
   return(

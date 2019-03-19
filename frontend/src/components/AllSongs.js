@@ -16,6 +16,7 @@ class AllSongs extends React.Component {
 
   componentDidMount = () => {
     this.getAllSongs()
+    this.getAllComments()
   }
 
   getAllSongs = () => {
@@ -29,6 +30,16 @@ console.log("this is ALLSONGS: ", res.data.songs)
     })
   }
 
+  getAllComments = () => {
+    axios
+    .get("/comments")
+    .then(res => {
+console.log("this is ALL COMMENTS: ", res.data.comments)
+      this.setState({
+        allComments:res.data.comments
+      })
+    })
+  }
 
   handleChange = (e) => {
   this.setState({
@@ -70,7 +81,7 @@ handleSubmit = (e) => {
           <input type="submit" value="Search"/>
       </form>
       <br/>
-      {this.state.requestedSong ? <DisplaySingleSong  requestedSong={this.state.requestedSong}/> :   <DisplayAllSongs allSongs={this.state.allSongs} /> }
+      {this.state.requestedSong ? <DisplaySingleSong  requestedSong={this.state.requestedSong}/> :   <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments} /> }
       </div>
     )
   }
