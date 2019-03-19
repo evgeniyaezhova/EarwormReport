@@ -10,7 +10,6 @@ class AllSongs extends React.Component {
       formInput: "",
       requestedSong: null,
       allSongs: [],
-      allFavorites: [],
       allComments: [],
     }
   }
@@ -45,29 +44,34 @@ handleSubmit = (e) => {
     let isSong = this.state.allSongs.filter(song => {
         let lowerTitle = song.title.toLowerCase()
 
-        return lowerTitle === search
+        return lowerTitle.includes(search)
     })
     if(isSong[0]){
-             this.setState({ requestedSong: isSong[0] })
+      console.log("isSong: ", isSong)
+             this.setState({ requestedSong: isSong })
          } else {
-             this.setState({ requestedSong: "Not Found"})
+             this.setState({ requestedSong: "Not Found" })
          }
   }
-  this.setState({
-    formInput: ""
-  })
+  // this.setState({
+  //   formInput: ""
+  // })
 }
 
-  render(){
 
+  render(){
+// debugger
     return(
       <div className="allSongs">
       <h1>ALL SONGS</h1>
+
+      <h2>Search By Title</h2>
       <form onSubmit={this.handleSubmit}>
-      <input type="text" value={this.state.formInput} onChange={this.handleChange} placeholder="Search for a song" className="searchBar"/>
+      <input type="text" value={this.state.formInput} onChange={this.handleChange} placeholder="Search by Title" className="searchBar"/>
           <input type="submit" value="Search"/>
       </form>
-      {this.state.requestedSong ? <DisplaySingleSong requestedSong={this.state.requestedSong}/> :   <DisplayAllSongs allSongs={this.state.allSongs} /> }
+      <br/>
+      {this.state.requestedSong ? <DisplaySingleSong  requestedSong={this.state.requestedSong}/> :   <DisplayAllSongs allSongs={this.state.allSongs} /> }
       </div>
     )
   }
