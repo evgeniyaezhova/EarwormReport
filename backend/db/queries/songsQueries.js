@@ -15,7 +15,19 @@ const getAllSongs = (req, res, next) => {
     });
 };
 
-
+const getAllSongsByPop = (req, res, next) => {
+  db.any('SELECT songs.id, title, img_url, COUNT(favorites.song_id) AS favoritesCount, username FROM songs JOIN favorites ON songs.id = favorites.song_id JOIN users ON songs.user_id = users.id GROUP BY songs.id, title, img_url, username ORDER BY favoritesCount DESC')
+    .then(songs => {
+      res.status(200).json({
+        status: "success!",
+        songs: songs,
+        message: "got all songs!"
+      });
+    })
+    .catch(err => {
+      return next(err)
+    });
+};
 
 const getAllSongsForOneGenre = (req, res, next) => {
   let genreId = parseInt(req.params.id);
