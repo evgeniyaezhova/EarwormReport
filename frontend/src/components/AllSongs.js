@@ -3,7 +3,6 @@ import axios from "axios";
 import DisplayAllSongs from "./DisplayAllSongs";
 import DisplaySingleSong from "./DisplaySingleSong";
 
-
 class AllSongs extends React.Component {
   constructor(){
     super()
@@ -13,7 +12,6 @@ class AllSongs extends React.Component {
       allSongs: [],
       allFavorites: [],
       allComments: [],
-
     }
   }
 
@@ -32,16 +30,6 @@ class AllSongs extends React.Component {
     })
   }
 
-  // getAllFavoritesForOneSong = () => {
-  //   axios
-  //   .get("/favorites" + id)
-  //   .then(res => {
-  //
-  //     this.setState({
-  //       allFavorites:res.data.favorites
-  //     })
-  //   })
-  // }
 
   handleChange = (e) => {
   this.setState({
@@ -79,7 +67,7 @@ handleSubmit = (e) => {
       <input type="text" value={this.state.formInput} onChange={this.handleChange} placeholder="Search for a song" className="searchBar"/>
           <input type="submit" value="Search"/>
       </form>
-      {this.state.requestedSong ? <DisplaySingleSong requestedSong={this.state.requestedSong}/> :   <DisplayAllSongs allSongs={this.state.allSongs} allFavorites={this.state.allFavorites}/> }
+      {this.state.requestedSong ? <DisplaySingleSong requestedSong={this.state.requestedSong}/> :   <DisplayAllSongs allSongs={this.state.allSongs} /> }
       </div>
     )
   }

@@ -2,7 +2,7 @@ const { db } = require('../index');
 
 const getAllSongs = (req, res, next) => {
 
-  db.any('SELECT title, img_url, username FROM songs JOIN users ON songs.user_id = users.id')
+  db.any('SELECT songs.id, title, img_url, COUNT(favorites.song_id) AS favoritesCount, username FROM songs JOIN favorites ON songs.id = favorites.song_id JOIN users ON songs.user_id = users.id GROUP BY songs.id, title, img_url, username ORDER BY songs.id DESC')
     .then(songs => {
       res.status(200).json({
         status: "success!",
@@ -14,6 +14,8 @@ const getAllSongs = (req, res, next) => {
       return next(err)
     });
 };
+
+
 
 const getAllSongsForOneGenre = (req, res, next) => {
   let genreId = parseInt(req.params.id);
@@ -97,6 +99,7 @@ const deleteSingleSong = (req, res, next) => {
 
 module.exports = {
   getAllSongs,
+  getAllSongsByPop,
   getAllSongsForOneGenre,
   getAllSongsByOneUser,
   getSingleSong,

@@ -1,20 +1,18 @@
 import React from "react";
 
-const DisplayAllSongs = ({ allSongs, allFavorites }) => {
+const DisplayAllSongs = ({ allSongs }) => {
   let displaysongs = allSongs.map((song, i) => {
-    // debugger
+    console.log(song)
     return (
       <div className="singleSongDiv" key={i}>
-      <ul>
-      <li>
       Title: {song.title}
       <br/>
       <img src= {song.img_url} alt='' id="songImg"/>
       <br/>
+      Favorites: {song.favoritescount}
+      <br/>
       User: {song.username}
       <br/>
-      </li>
-      </ul>
       </div>
     )
   })
