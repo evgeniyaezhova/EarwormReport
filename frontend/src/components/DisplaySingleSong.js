@@ -9,6 +9,7 @@ const DisplaySingleSong = ({ requestedSong, allComments }) => {
     )
   }
   return(requestedSong.map((song, i) => {
+    // debugger
     return(
       <div key={i} className="songdeets">
       <img src= {song.img_url} alt='' id="songImg"/>

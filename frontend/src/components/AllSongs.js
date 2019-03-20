@@ -23,6 +23,7 @@ class AllSongs extends React.Component {
     axios
     .get("/songs")
     .then(res => {
+      console.log("this is ALL SONGS: ", res)
       this.setState({
         allSongs:res.data.songs
       })

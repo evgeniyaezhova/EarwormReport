@@ -9,10 +9,11 @@ class AllSongsByGenre extends React.Component {
     this.state = {
       allSongs: [],
       allComments: [],
-      allGenres: []
+      allGenres: [],
+      selectedGenre: "",
+      formSubmitted: false
     }
   }
-  // this.getAllComments()
 
   componentDidMount = () => {
     this.getAllSongs()
@@ -24,6 +25,7 @@ class AllSongsByGenre extends React.Component {
     axios
     .get("/songs")
     .then(res => {
+      console.log("This is SONGS RES: ", res)
       this.setState({
         allSongs:res.data.songs
       })
@@ -51,13 +53,18 @@ class AllSongsByGenre extends React.Component {
     })
   }
 
+  handleChange = (e) => {
+    this.setState({
+      selectedGenre: e.target.value
+    })
+  }
 
   render(){
+    // debugger
     return(
       <div className="allSongsByGenre">
       <h1>ALL SONGS BY GENRE</h1>
-      <SelectBar allGenres={this.state.allGenres} />
-      <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments} />
+      <SelectBar allGenres={this.state.allGenres} selectedGenre={this.state.selectedGenre} handleChange={this.handleChange} allSongs={this.state.allSongs} allComments={this.state.allComments}/>
       </div>
     )
   }
