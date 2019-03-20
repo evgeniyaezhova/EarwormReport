@@ -5,8 +5,24 @@ const DisplaySongsByGenre = ({ selectedGenre, allSongs, allComments }) => {
     if(song.genre === selectedGenre){
       return(
         <div key={i} className="songsByGenre">
+        <img src= {song.img_url} alt='' id="songImg"/>
+        <br/>
         Title: {song.title}
-
+        <br/>
+        User: {song.username}
+        <br/>
+        {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
+        <br/>
+        Comments: { allComments.map((comment, i) => {
+          if(comment.song_id === song.songid){
+            return (
+              <div key={i}>
+              {comment.username}: {comment.comment_body}
+              <br/>
+              </div>
+            )
+          }
+        })}
         </div>
       )
     }

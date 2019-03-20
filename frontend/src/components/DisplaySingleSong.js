@@ -21,7 +21,7 @@ const DisplaySingleSong = ({ requestedSong, allComments }) => {
       {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
       <br/>
       Comments: { allComments.map((comment, i) => {
-        if(comment.song_id === song.id){
+        if(comment.song_id === song.songid){
           return (
             <div key={i}>
             {comment.username}: {comment.comment_body}
