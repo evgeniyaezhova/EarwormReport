@@ -7,6 +7,7 @@ import AllSongsByPop from "./components/AllSongsByPop";
 import './App.css';
 
 class App extends Component {
+  // while this *will* work, I'd like to think about (based on our architecture lesson we had recently) how the routing of this app might be improved. Generally, if I'm seeing a lot of "exact path" and similar root routes (for example, /songs and /songs/bypop), it means that there's an opportunity to employ nested routing.
   render() {
     return (
       <div className="App">

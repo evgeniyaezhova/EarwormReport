@@ -15,6 +15,9 @@ class AllSongs extends React.Component {
   }
 
   componentDidMount = () => {
+    // OK, so this might not work reliably. Reason being, you have two AJAX requests running at the same time, both calling setState. If one of them calls setState at the same time as the other, then one of them might get priority over the other.
+
+    // It's OK to include multiple setState instances in componentDidMount, but the preferred method is to chain them with .then statements. This applies to your byPop component, too.
     this.getAllSongs()
     this.getAllComments()
   }
