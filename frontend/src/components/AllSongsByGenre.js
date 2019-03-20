@@ -1,19 +1,23 @@
 import React from "react";
 import axios from "axios";
 import DisplayAllSongs from "./DisplayAllSongs";
+import SelectBar from "./SelectBar";
 
 class AllSongsByGenre extends React.Component {
   constructor(){
     super()
     this.state = {
       allSongs: [],
-      allComments: []
+      allComments: [],
+      allGenres: []
     }
   }
+  // this.getAllComments()
 
   componentDidMount = () => {
     this.getAllSongs()
     this.getAllComments()
+    this.getAllGenres()
   }
 
   getAllSongs = () => {
@@ -36,11 +40,24 @@ class AllSongsByGenre extends React.Component {
     })
   }
 
+  getAllGenres = () => {
+    axios
+    .get("/genres")
+    .then(res => {
+      console.log("this is GENRES RES: ", res)
+      this.setState({
+        allGenres: res.data.genres
+      })
+    })
+  }
+
+
   render(){
     return(
-      <div className="allSongsByPop">
-      <h1>ALL SONGS BY POPULARITY</h1>
-      <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments}/>
+      <div className="allSongsByGenre">
+      <h1>ALL SONGS BY GENRE</h1>
+      <SelectBar allGenres={this.state.allGenres} />
+      <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments} />
       </div>
     )
   }
