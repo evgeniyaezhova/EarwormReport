@@ -10,7 +10,7 @@ class AllSongs extends React.Component {
       formInput: "",
       requestedSong: null,
       allSongs: [],
-      allComments: [],
+      allComments: []
     }
   }
 
@@ -34,6 +34,7 @@ class AllSongs extends React.Component {
     axios
     .get("/comments")
     .then(res => {
+        console.log("this is ALL COMMENTS: ", res)
       this.setState({
         allComments:res.data.comments
       })

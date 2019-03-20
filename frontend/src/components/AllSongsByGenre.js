@@ -36,6 +36,7 @@ class AllSongsByGenre extends React.Component {
     axios
     .get("/comments")
     .then(res => {
+    console.log("this is COMMENTS RES: ", res)
       this.setState({
         allComments:res.data.comments
       })
