@@ -13,37 +13,35 @@ class AllSongsByPop extends React.Component {
 
   componentDidMount = () => {
     this.getAllSongsByPop()
+    this.getAllComments()
   }
 
   getAllSongsByPop = () => {
     axios
     .get("/songs/bypop")
     .then(res => {
-// debugger
       this.setState({
         allSongs:res.data.songs
       })
     })
   }
 
-  // getAllComments = () => {
-  //   axios
-  //   .get("/comments")
-  //   .then(res => {
-  //
-  //     this.setState({
-  //       allComments:res.data.comments
-  //     })
-  //   })
-  // }
-
+  getAllComments = () => {
+    axios
+    .get("/comments")
+    .then(res => {
+console.log("this is ALL COMMENTS: ", res.data.comments)
+      this.setState({
+        allComments:res.data.comments
+      })
+    })
+  }
 
   render(){
-// debugger
     return(
       <div className="allSongsByPop">
       <h1>ALL SONGS BY POPULARITY</h1>
-      <DisplayAllSongs allSongs={this.state.allSongs} />
+      <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments}/>
       </div>
     )
   }

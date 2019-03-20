@@ -1,6 +1,6 @@
 import React from "react";
 
-const DisplaySingleSong = ({ requestedSong }) => {
+const DisplaySingleSong = ({ requestedSong, allComments }) => {
   if(requestedSong === "Not Found"){
     return(
       <div className="notFound">
@@ -13,10 +13,22 @@ const DisplaySingleSong = ({ requestedSong }) => {
       <div key={i} className="songdeets">
       <img src= {song.img_url} alt='' id="songImg"/>
       <br/>
-      Name: {song.title}
+      Title: {song.title}
       <br/>
       User: {song.username}
       <br/>
+      {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
+      <br/>
+      Comments: { allComments.map((comment, i) => {
+        if(comment.song_id === song.id){
+          return (
+            <div key={i}>
+            {comment.username}: {comment.comment_body}
+            <br/>
+            </div>
+          )
+        }
+      })}
       </div>
     )
   })

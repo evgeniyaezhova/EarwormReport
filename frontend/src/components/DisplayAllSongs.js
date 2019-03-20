@@ -9,11 +9,9 @@ const DisplayAllSongs = ({ allSongs, allComments }) => {
       <br/>
       Title: {song.title}
       <br/>
-      {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
-      <br/>
-      <button type="button" >Favorite</button>
-      <br/>
       User: {song.username}
+      <br/>
+      {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
       <br/>
       Comments: { allComments.map((comment, i) => {
         if(comment.song_id === song.id){

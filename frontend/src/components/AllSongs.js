@@ -81,7 +81,7 @@ handleSubmit = (e) => {
           <input type="submit" value="Search"/>
       </form>
       <br/>
-      {this.state.requestedSong ? <DisplaySingleSong  requestedSong={this.state.requestedSong}/> :   <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments} /> }
+      {this.state.requestedSong ? <DisplaySingleSong  requestedSong={this.state.requestedSong} allComments={this.state.allComments}/> :   <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments} /> }
       </div>
     )
   }
