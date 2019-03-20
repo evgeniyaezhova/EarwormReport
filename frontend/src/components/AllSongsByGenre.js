@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import DisplayAllSongs from "./DisplayAllSongs";
 
-class AllSongsByPop extends React.Component {
+class AllSongsByGenre extends React.Component {
   constructor(){
     super()
     this.state = {
@@ -12,13 +12,13 @@ class AllSongsByPop extends React.Component {
   }
 
   componentDidMount = () => {
-    this.getAllSongsByPop()
+    this.getAllSongs()
     this.getAllComments()
   }
 
-  getAllSongsByPop = () => {
+  getAllSongs = () => {
     axios
-    .get("/songs/bypop")
+    .get("/songs")
     .then(res => {
       this.setState({
         allSongs:res.data.songs
@@ -48,4 +48,4 @@ class AllSongsByPop extends React.Component {
 
 
 
-export default AllSongsByPop;
+export default AllSongsByGenre;

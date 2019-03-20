@@ -23,7 +23,6 @@ class AllSongs extends React.Component {
     axios
     .get("/songs")
     .then(res => {
-console.log("this is ALLSONGS: ", res.data.songs)
       this.setState({
         allSongs:res.data.songs
       })
@@ -34,7 +33,6 @@ console.log("this is ALLSONGS: ", res.data.songs)
     axios
     .get("/comments")
     .then(res => {
-console.log("this is ALL COMMENTS: ", res.data.comments)
       this.setState({
         allComments:res.data.comments
       })
