@@ -9,7 +9,8 @@ class MyProfile extends React.Component {
       allUsers: [],
       currentUser: {},
       allSongs: [],
-      allComments: []
+      allComments: [],
+      allFavorites: []
     }
   }
 
@@ -17,6 +18,7 @@ class MyProfile extends React.Component {
     this.getAllUsers()
     this.getAllSongs()
     this.getAllComments()
+    this.getAllFavorites()
   }
 
   getAllUsers = () => {
@@ -54,11 +56,23 @@ class MyProfile extends React.Component {
     })
   }
 
+  getAllFavorites = () => {
+    axios
+    .get("/favorites")
+    .then(res => {
+      console.log("this is Favorites RES: ", res.data.favorites)
+      this.setState({
+        allFavorites: res.data.favorites
+      })
+    })
+  }
+
+
   render(){
     return(
       <div>
       <h1>USER NUMBER ONE</h1>
-      <DisplayMyProfile allUsers={this.state.allUsers} currentUser={this.state.currentUser} allSongs={this.state.allSongs} allComments={this.state.allComments} />
+      <DisplayMyProfile allUsers={this.state.allUsers} currentUser={this.state.currentUser} allSongs={this.state.allSongs} allComments={this.state.allComments} userFavoriteSongs={this.state.userFavoriteSongs} allFavorites={this.state.allFavorites} />
       </div>
     )
   }

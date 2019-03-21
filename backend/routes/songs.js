@@ -3,6 +3,7 @@ const router = express.Router();
 const {
   getAllSongs,
   getAllSongsByPop,
+  getAllSongsFavorites,
   getAllSongsForOneGenre,
   getAllSongsByOneUser,
   getSingleSong,
@@ -12,6 +13,7 @@ const {
 
 router.get('/', getAllSongs);
 router.get('/bypop', getAllSongsByPop);
+router.get('/favs', getAllSongsFavorites);
 router.get('/genre/:id', getAllSongsForOneGenre);
 router.get('/user/:id', getAllSongsByOneUser);
 router.get('/:id', getSingleSong);

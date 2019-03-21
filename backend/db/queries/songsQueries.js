@@ -29,6 +29,21 @@ const getAllSongsByPop = (req, res, next) => {
     });
 };
 
+const getAllSongsFavorites = (req, res, next) => {
+
+  db.any('SELECT songs.id AS songId, title, img_url, COUNT(favorites.song_id) AS favoritesCount, favorites.user_id AS favoriter, username, users.id AS userId, genres.genre_name AS genre, genres.id AS genreId FROM songs JOIN favorites ON songs.id = favorites.song_id JOIN users ON songs.user_id = users.id JOIN genres ON songs.genre_id = genres.id GROUP BY songId, title, img_url, userId, genreId, favoritescount ORDER BY songs.id DESC')
+    .then(songs => {
+      res.status(200).json({
+        status: "success!",
+        songs: songs,
+        message: "got all songs!"
+      });
+    })
+    .catch(err => {
+      return next(err)
+    });
+};
+
 const getAllSongsForOneGenre = (req, res, next) => {
   let genreId = parseInt(req.params.id);
   db.any('SELECT * FROM songs WHERE genre_id=$1', [genreId])
@@ -112,6 +127,7 @@ const deleteSingleSong = (req, res, next) => {
 module.exports = {
   getAllSongs,
   getAllSongsByPop,
+  getAllSongsFavorites,
   getAllSongsForOneGenre,
   getAllSongsByOneUser,
   getSingleSong,
