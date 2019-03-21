@@ -17,6 +17,8 @@ return(
   <option />
   {genreList}
   </select>
+  <br />
+  <br />
   {selectedGenre ? <DisplaySongsByGenre allGenres={allGenres} allSongs={allSongs} allComments={allComments} selectedGenre={selectedGenre}/> : <DisplayAllSongs allSongs={allSongs} allComments={allComments}/> }
   </div>
 )

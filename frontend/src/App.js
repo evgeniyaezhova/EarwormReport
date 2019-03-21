@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import AllSongs from "./components/AllSongs";
 import AllSongsByPop from "./components/AllSongsByPop";
 import AllSongsByGenre from "./components/AllSongsByGenre";
+import MyProfile from "./components/MyProfile";
 import './App.css';
 
 class App extends Component {
@@ -13,10 +14,11 @@ class App extends Component {
       <div className="App">
       <NavBar />
         <Switch>
+        <Route path="/profile" component={MyProfile} />
         <Route exact path="/songs/bygenre" component={AllSongsByGenre} />
         <Route exact path="/songs/bypop" component={AllSongsByPop} />
-        <Route exact path="/songs" component={AllSongs} />
-        <Route exact path="/" component={Home} />
+        <Route path="/songs" component={AllSongs} />
+        <Route path="/" component={Home} />
         </Switch>
       </div>
     );
