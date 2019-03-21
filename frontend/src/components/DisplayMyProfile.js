@@ -19,7 +19,7 @@ const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFav
   })
 
   let favoritesOfCurrentUser = allFavorites.map((favorite, i) => {
-    if(favorite.favoriter === 1){
+    if(favorite.favoriter === currentUser.id){
       return(
         <div key={i} className="getAllFavoritesByOneUser">
         <img src= {favorite.img_url} alt='' id="songImg"/>
@@ -38,7 +38,7 @@ const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFav
     <h1>{currentUser.username}</h1>
     <h3> POSTED </h3>
     {songsOfCurrentUser}
-    <button>FAVORITED</button>
+    <h3> FAVORITED </h3>
     {favoritesOfCurrentUser}
     </div>
   )

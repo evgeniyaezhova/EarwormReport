@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const DisplayAllSongs = ({ allSongs, allComments }) => {
   let displaysongs = allSongs.map((song, i) => {
@@ -9,7 +10,8 @@ const DisplayAllSongs = ({ allSongs, allComments }) => {
       <br/>
       Title: {song.title}
       <br/>
-      Posted by: {song.username}
+      Posted by:
+      <Link to={"/profile/" + song.userid}>{song.username}</Link>
       <br/>
       {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
       <br/>
@@ -25,6 +27,11 @@ const DisplayAllSongs = ({ allSongs, allComments }) => {
       }
 
     )}
+    Add Comment:
+    <form>
+    <input type="text" placeholder="Add a comment" />
+        <input type="submit" value="Submit"/>
+    </form>
       </div>
 
     )
