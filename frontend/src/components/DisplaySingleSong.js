@@ -16,7 +16,7 @@ const DisplaySingleSong = ({ requestedSong, allComments }) => {
       <br/>
       Title: {song.title}
       <br/>
-      User: {song.username}
+      Posted by: {song.username}
       <br/>
       {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
       <br/>

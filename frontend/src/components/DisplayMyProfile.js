@@ -9,7 +9,7 @@ const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFav
         <br/>
         Title: {song.title}
         <br/>
-        User: {song.username}
+        Posted by: {song.username}
         <br/>
         {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
         <br/>
@@ -18,18 +18,17 @@ const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFav
     }
   })
 
-  let favoritesOfCurrentUser = allSongs.map((song, i) => {
-    if(song.userid === 1){
+  let favoritesOfCurrentUser = allFavorites.map((favorite, i) => {
+    if(favorite.favoriter === 1){
       return(
         <div key={i} className="getAllFavoritesByOneUser">
-        <img src= {song.img_url} alt='' id="songImg"/>
+        <img src= {favorite.img_url} alt='' id="songImg"/>
         <br/>
-        Title: {song.title}
+        Title: {favorite.title}
         <br/>
-        User: {song.username}
+        User: {favorite.username}
         <br/>
-        {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
-        <br/>
+
         </div>
       )
     }
