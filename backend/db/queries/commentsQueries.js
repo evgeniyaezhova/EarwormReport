@@ -31,7 +31,6 @@ const getAllCommentsForOneSong = (req, res, next) => {
 };
 
 const createNewComment = (req, res, next) => {
-req.body.comment_body = parseInt(req.body.comment_body);
 req.body.user_id = parseInt(req.body.user_id);
 req.body.song_id = parseInt(req.body.song_id);
   db.none(

@@ -3,6 +3,7 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 
 const DisplayAllSongs = ({ allSongs, allComments, commentInput, currentUser, handleComment }) => {
+  console.log("THIS IS INPUT:", commentInput)
   let displaysongs = allSongs.map((song, i) => {
 
     return (
