@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import DisplaySongs from "./DisplaySongs";
+import "./styling/AllSongs.css"
 
 class AllSongs extends React.Component {
   constructor(){
@@ -10,7 +11,7 @@ class AllSongs extends React.Component {
       requestedSong: null,
       allSongs: [],
       allComments: [],
-      commentInput: "",
+
       currentUser: {}
     }
   }
@@ -61,11 +62,11 @@ class AllSongs extends React.Component {
   })
 }
 
-  handleComment = (e) => {
-  this.setState({
-    commentInput: e.target.value
-  })
-  }
+  // handleComment = (e) => {
+  // this.setState({
+  //   commentInput: e.target.value
+  // })
+  // }
 
 handleSubmit = (e) => {
   e.preventDefault();
@@ -93,25 +94,38 @@ handleSubmit = (e) => {
   render(){
 // debugger
     return(
-      <div className="allSongs">
-      <h1>ALL SONGS</h1>
-      <h2>Search By Title</h2>
-      <form onSubmit={this.handleSubmit}>
-      <input type="text" value={this.state.formInput} onChange={this.handleChange} placeholder="Search by Title" className="searchBar"/>
-          <input type="submit" value="Search"/>
-      </form>
-      <br/>
-      {this.state.requestedSong ?
-        <DisplaySongs
-        allSongs={this.state.requestedSong} allComments={this.state.allComments}
-        commentInput={this.state.commentInput}
-        currentUser={this.state.currentUser}
-        handleComment={this.handleComment}/>
-        :
-        <DisplaySongs
-        allSongs={this.state.allSongs} allComments={this.state.allComments} commentInput={this.state.commentInput}
-        currentUser={this.state.currentUser}
-        handleComment={this.handleComment} /> }
+      <div className="allSongsParent">
+        <div className="allSongs">
+          <div className="searchParent">
+              <div className="searchDiv">
+                <h1>Search By Title</h1>
+                <form onSubmit={this.handleSubmit}>
+                <div className="searchInput">
+                    <input type="text" value={this.state.formInput} onChange={this.handleChange} placeholder="Type in the title" className="searchBar"/>
+                      <input type="submit" value="Search" className="searchButton"/>
+                </div>
+                </form>
+              </div>
+            </div>
+            <div className="displayParent">
+            <div className="displaySongs">
+              {this.state.requestedSong ?
+                <DisplaySongs
+                allSongs={this.state.requestedSong}
+                allComments={this.state.allComments}
+                commentInput={this.state.commentInput}
+                currentUser={this.state.currentUser}
+                handleComment={this.handleComment}/>
+                :
+                <DisplaySongs
+                allSongs={this.state.allSongs}
+                allComments={this.state.allComments}
+                
+                currentUser={this.state.currentUser}
+                handleComment={this.handleComment} /> }
+            </div>
+            </div>
+        </div>
       </div>
     )
   }

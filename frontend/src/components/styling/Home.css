@@ -10,9 +10,9 @@
 .welcome {
   background-color: #621389;
   /* background-color: #d1d1d1; */
-  height: 100%;
+  min-height: 800px;
   padding-top: 15px;
-  padding-bottom: 600px;
+  /* padding-bottom: 600px; */
   margin-top: 75px;
   display: flex;
   justify-content: center;

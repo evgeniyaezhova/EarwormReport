@@ -1,7 +1,7 @@
 const { db } = require('../index');
 
 const getAllComments = (req, res, next) => {
-  db.any('SELECT comment_body, comments.song_id, username FROM comments JOIN users ON comments.user_id = users.id')
+  db.any('SELECT comments.user_id AS userid, comment_body, comments.song_id, username FROM comments JOIN users ON comments.user_id = users.id')
     .then(comments => {
       res.status(200).json({
         status: "success!",

@@ -1,0 +1,27 @@
+.singleP {
+
+}
+
+.singleSongDiv {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+
+.songDetailsParent {
+  width: 600px;
+  align-items: flex-end;
+}
+
+.songDetails {
+  text-align: right;
+  font-family: 'Baloo Thambi', cursive;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+
+#songImg{
+  height: 200px;
+  width: 200px;
+}

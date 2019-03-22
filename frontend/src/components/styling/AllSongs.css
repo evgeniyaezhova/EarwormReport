@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Thambi|Permanent+Marker|Gothic+A1|Prompt');
+
+.allSongsParent{
+  display: flex;
+  justify-content: center;
+  /* background-color: #621389; */
+  background-color: #d1d1d1;
+}
+
+.allSongs {
+  background-color: #621389;
+  min-height: 800px;
+  padding-top: 15px;
+  margin-top: 75px;
+  min-width: 800px;
+  width: 80%;
+  border: 1px solid #00f281;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.allSongs h1{
+  font-family: 'Baloo Thambi', cursive;
+  font-size: 27px;
+}
+
+.searchParent {
+  display: flex;
+  justify-content: center;
+}
+
+.searchDiv {
+  width: 500px;
+  height: 100px;
+  display: block;
+  align-items: center;
+
+}
+
+.searchInput {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.searchBar {
+  background: #d1d1d1;
+  border: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  border-radius: 2px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  height: 30px;
+  width: 375px;
+  line-height: 20px;
+  outline: none;
+  font: Helvetica;
+}
+
+.searchButton {
+  background: #d1d1d1;
+  width: 90px;
+  border-radius: 20px;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.displayParent {
+  display: flex;
+  justify-content: center;
+}
+
+.displaySongs {
+  width: 900px;
+}

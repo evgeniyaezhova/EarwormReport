@@ -10,7 +10,7 @@ const {
 
 router.get('/', getAllComments);
 router.get('/song/:id', getAllCommentsForOneSong);
-router.post('/', createNewComment);
+router.post('/', createNewComment, getAllComments);
 router.patch('/:id', editSingleComment);
 router.delete('/:id', deleteSingleComment);
 

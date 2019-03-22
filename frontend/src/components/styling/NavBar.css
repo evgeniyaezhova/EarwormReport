@@ -8,7 +8,7 @@
   position: fixed;
   top: 0;
   /* background-color: #d1d1d1; */
-    /* background-color: #00f281; */
+  /* background-color: #00f281; */
   background-color:  #c9a0dc;
   /* background-color:  #bff7df; */
   justify-content: space-between;
@@ -32,8 +32,14 @@
   justify-content: space-around;
 }
 
-#logo{
+#logo a{
   font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+  color: white;
+
+  -webkit-text-fill-color: black;
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: #00f281;
 }
 
 .links {
