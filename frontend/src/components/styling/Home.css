@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Baloo+Thambi|Permanent+Marker|Prompt');
 
+.welcomeParent{
+  display: flex;
+  justify-content: center;
+  /* background-color: #621389; */
+  background-color: #d1d1d1;
+}
+
 .welcome {
   background-color: #621389;
+  /* background-color: #d1d1d1; */
   height: 100%;
+  padding-top: 15px;
   padding-bottom: 600px;
-  margin-top: 0;
+  margin-top: 75px;
+  display: flex;
+  justify-content: center;
+  min-width: 800px;
+  width: 80%;
+  border: 1px solid #00f281;
 }
 
 .earwormText {
@@ -13,4 +27,7 @@
   font-size: 45px;
   font-family: 'Permanent Marker', cursive;
   color: black;
+  /* -webkit-text-fill-color: white;  */
+  -webkit-text-stroke-width: 0.2px;
+  -webkit-text-stroke-color: #00f281;
 }

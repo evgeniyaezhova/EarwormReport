@@ -3,8 +3,12 @@ import "./styling/Home.css";
 
 const Home = () => {
   return(
-    <div className="welcome">
-    <h1 className="earwormText">Earworm Report</h1>
+    <div className="welcomeParent">
+      <div className="welcome">
+        <div className="report">
+          <h1 className="earwormText">Earworm Report</h1>
+        </div>
+      </div>
     </div>
   )
 }
