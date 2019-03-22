@@ -1,7 +1,7 @@
 const { db } = require('../index');
 
 const getAllFavorites = (req, res, next) => {
-  db.any('SELECT favorites.id AS favoriteId, favorites.user_id AS favoriter, favorites.song_id AS favoritesong, songs.id as songid, title, img_url, songs.user_id AS poster FROM favorites JOIN songs on songs.id = favorites.song_id')
+  db.any('SELECT favorites.id AS favoriteId, COUNT(favorites.song_id) AS favoritesCount, favorites.user_id AS favoriter, favorites.song_id AS favoritesongid, songs.id as songid, title, img_url, songs.user_id AS userId, users.username AS username FROM favorites JOIN songs on songs.id = favorites.song_id JOIN users ON favorites.user_id = users.id GROUP BY favoriteId, songId, title, img_url, username ORDER BY songId DESC')
   .then(favorites => {
     res.status(200).json({
       status: "success!",

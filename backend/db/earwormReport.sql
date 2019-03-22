@@ -60,7 +60,7 @@ INSERT INTO songs(title, img_url, user_id, genre_id) VALUES
 ('Without Me', 'https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/c2/f3/92/c2f39257-3ae0-1f85-55a4-f6fa4152ef83/00602577065798.rgb.jpg/170x170bb-85.png', 1, 2),
 ('Bad Liar', 'https://is2-ssl.mzstatic.com/image/thumb/Music118/v4/55/c4/7d/55c47dec-56b9-4f9b-fab4-0f7f394a10a8/00602577199219.rgb.jpg/170x170bb-85.png', 10, 2),
 ('11 Minutes', 'https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/83/ec/6d/83ec6d7e-b9a9-fa3d-0778-0cc2fac39ee2/00602577440618.rgb.jpg/170x170bb-85.png', 6, 2),
-('SunFlower', 'https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/69/09/dd/6909dd4a-81fc-69ef-2c48-031b1ec2b141/00602577203794.rgb.jpg/170x170bb-85.png', 2, 3),
+('SunFlower', 'https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/69/09/dd/6909dd4a-81fc-69ef-2c48-031b1ec2b141/00602577203794.rgb.jpg/170x170bb-85.png', 1, 3),
 ('Middle Child', 'https://is2-ssl.mzstatic.com/image/thumb/Music114/v4/23/83/d9/2383d9d9-c03f-9d99-8502-3896a56fa043/00810760037709.rgb.jpg/170x170bb-85.png', 2, 3),
 ('Murder on My Mind', 'https://is4-ssl.mzstatic.com/image/thumb/Music128/v4/4d/a9/d5/4da9d543-5d55-684b-2343-b4715e500f66/814908026372.jpg/170x170bb-85.png', 5, 3),
 ('Beautiful Crazy', 'https://is2-ssl.mzstatic.com/image/thumb/Music128/v4/fa/8d/22/fa8d22a8-4525-e073-46f7-7f6026578ea6/886447048443.jpg/170x170bb-85.png', 7, 4),

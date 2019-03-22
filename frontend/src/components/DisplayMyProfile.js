@@ -20,15 +20,21 @@ const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFav
   let favoritesOfCurrentUser = allFavorites.map((favorite, i) => {
     if(favorite.favoriter === currentUser.id){
       return(
-        <div key={i} className="getAllFavoritesByOneUser">
-        <img src= {favorite.img_url} alt='' id="songImg"/>
-        <br/>
-        Title: {favorite.title}
-        <br/>
-        User: {favorite.username}
-        <br/>
+        allSongs.map((song, i) => {
+          if(song.songid === favorite.favoritesongid){
+            return(
+              <div key={i}>
+              <DisplaySingleSong
+              song={song}
+              allComments={allComments} currentUser={currentUser}
+              commentInput={commentInput}
+              handleComment={handleComment}
+              />
+              </div>
+            )
+          }
+        })
 
-        </div>
       )
     }
   })
