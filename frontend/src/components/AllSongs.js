@@ -10,13 +10,16 @@ class AllSongs extends React.Component {
       formInput: "",
       requestedSong: null,
       allSongs: [],
-      allComments: []
+      allComments: [],
+      commentInput: "",
+      currentUser: {}
     }
   }
 
   componentDidMount = () => {
     this.getAllSongs()
     this.getAllComments()
+    this.getAllUsers()
   }
 
   getAllSongs = () => {
@@ -41,11 +44,29 @@ class AllSongs extends React.Component {
     })
   }
 
+  getAllUsers = () => {
+    axios
+    .get("/users")
+    .then(res => {
+      console.log("This is USERS RES: ", res.data.users)
+      console.log("this.is CURRENT USER: ", res.data.users[0])
+      this.setState({
+        currentUser: res.data.users[0]
+      })
+    })
+  }
+
   handleChange = (e) => {
   this.setState({
     formInput: e.target.value
   })
 }
+
+  handleComment = (e) => {
+  this.setState({
+    commentInput: e.target.value
+  })
+  }
 
 handleSubmit = (e) => {
   e.preventDefault();
@@ -81,7 +102,10 @@ handleSubmit = (e) => {
           <input type="submit" value="Search"/>
       </form>
       <br/>
-      {this.state.requestedSong ? <DisplaySingleSong  requestedSong={this.state.requestedSong} allComments={this.state.allComments}/> :   <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments} /> }
+      {this.state.requestedSong ? <DisplaySingleSong  requestedSong={this.state.requestedSong} allComments={this.state.allComments}/> :
+      <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments} commentInput={this.state.commentInput}
+      currentUser={this.state.currentUser}
+      handleComment={this.handleComment} /> }
       </div>
     )
   }

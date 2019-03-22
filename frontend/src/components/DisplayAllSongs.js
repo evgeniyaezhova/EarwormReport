@@ -1,9 +1,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
-const DisplayAllSongs = ({ allSongs, allComments }) => {
+const DisplayAllSongs = ({ allSongs, allComments, commentInput, currentUser, handleComment }) => {
   let displaysongs = allSongs.map((song, i) => {
-    // console.log("this is SONG: ", song)
+
     return (
       <div className="singleSongDiv" key={i}>
       <img src= {song.img_url} alt='' id="songImg"/>
@@ -27,9 +28,22 @@ const DisplayAllSongs = ({ allSongs, allComments }) => {
       }
 
     )}
+
+
     Add Comment:
-    <form>
-    <input type="text" placeholder="Add a comment" />
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      if(commentInput){
+        axios
+        .post("/comments", {
+          comment_body: commentInput,
+          user_id: currentUser.id,
+          song_id: song.songid
+        })
+
+      }
+    }}>
+    <input type="text" placeholder="Add a comment" value={commentInput} onChange={handleComment} />
         <input type="submit" value="Submit"/>
     </form>
       </div>
