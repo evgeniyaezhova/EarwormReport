@@ -1,6 +1,5 @@
 import React from "react";
-import DisplayAllSongs from "./DisplayAllSongs";
-import DisplaySongsByGenre from "./DisplaySongsByGenre"
+import DisplaySongs from "./DisplaySongs";
 
 const SelectBar = ({ allGenres, selectedGenre, handleChange, allSongs, allComments }) => {
   let genreList = allGenres.map((genre, i) => {
@@ -19,7 +18,7 @@ return(
   </select>
   <br />
   <br />
-  {selectedGenre ? <DisplaySongsByGenre allGenres={allGenres} allSongs={allSongs} allComments={allComments} selectedGenre={selectedGenre}/> : <DisplayAllSongs allSongs={allSongs} allComments={allComments}/> }
+  {selectedGenre ? <DisplaySongs allGenres={allGenres} allSongs={allSongs} allComments={allComments} selectedGenre={selectedGenre}/> : <DisplaySongs allSongs={allSongs} allComments={allComments}/> }
   </div>
 )
 

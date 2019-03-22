@@ -1,7 +1,6 @@
 import React from "react";
 import axios from "axios";
-import DisplayAllSongs from "./DisplayAllSongs";
-import DisplaySingleSong from "./DisplaySingleSong";
+import DisplaySongs from "./DisplaySongs";
 
 class AllSongs extends React.Component {
   constructor(){
@@ -102,10 +101,17 @@ handleSubmit = (e) => {
           <input type="submit" value="Search"/>
       </form>
       <br/>
-      {this.state.requestedSong ? <DisplaySingleSong  requestedSong={this.state.requestedSong} allComments={this.state.allComments}/> :
-      <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments} commentInput={this.state.commentInput}
-      currentUser={this.state.currentUser}
-      handleComment={this.handleComment} /> }
+      {this.state.requestedSong ?
+        <DisplaySongs
+        allSongs={this.state.requestedSong} allComments={this.state.allComments}
+        commentInput={this.state.commentInput}
+        currentUser={this.state.currentUser}
+        handleComment={this.handleComment}/>
+        :
+        <DisplaySongs
+        allSongs={this.state.allSongs} allComments={this.state.allComments} commentInput={this.state.commentInput}
+        currentUser={this.state.currentUser}
+        handleComment={this.handleComment} /> }
       </div>
     )
   }

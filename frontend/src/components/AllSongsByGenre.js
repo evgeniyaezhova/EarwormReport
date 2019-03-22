@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import DisplayAllSongs from "./DisplayAllSongs";
 import SelectBar from "./SelectBar";
 
 class AllSongsByGenre extends React.Component {

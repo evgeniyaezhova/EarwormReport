@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import DisplayAllSongs from "./DisplayAllSongs";
+import DisplaySongs from "./DisplaySongs";
 
 class AllSongsByPop extends React.Component {
   constructor(){
@@ -40,7 +40,7 @@ class AllSongsByPop extends React.Component {
     return(
       <div className="allSongsByPop">
       <h1>ALL SONGS BY POPULARITY</h1>
-      <DisplayAllSongs allSongs={this.state.allSongs} allComments={this.state.allComments}/>
+      <DisplaySongs allSongs={this.state.allSongs} allComments={this.state.allComments}/>
       </div>
     )
   }
