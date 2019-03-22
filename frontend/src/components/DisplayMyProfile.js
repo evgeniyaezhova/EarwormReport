@@ -23,7 +23,7 @@ const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFav
         allSongs.map((song, i) => {
           if(song.songid === favorite.favoritesongid){
             return(
-              <div key={i}>
+              <div key={i} className="singleParent">
               <DisplaySingleSong
               song={song}
               allComments={allComments} currentUser={currentUser}
@@ -40,10 +40,12 @@ const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFav
   })
   return(
     <div>
+    <div className="userName">
     <h1>{currentUser.username}</h1>
-    <h3> POSTED </h3>
+    </div>
+    <h3>SONGS POSTED </h3>
     {songsOfCurrentUser}
-    <h3> FAVORITED </h3>
+    <h3>SONGS FAVORITED </h3>
     {favoritesOfCurrentUser}
     </div>
   )

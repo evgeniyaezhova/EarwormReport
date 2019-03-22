@@ -1,6 +1,9 @@
 import React from "react";
 import axios from "axios";
 import DisplayMyProfile from "./DisplayMyProfile";
+import "./styling/SingleSong.css";
+import "./styling/AllSongs.css";
+import "./styling/MyProfile.css";
 
 class MyProfile extends React.Component {
   constructor(){
@@ -77,12 +80,17 @@ class MyProfile extends React.Component {
 
   render(){
     return(
-      <div>
-      <h1>USER NUMBER ONE</h1>
-      <DisplayMyProfile allUsers={this.state.allUsers} currentUser={this.state.currentUser} allSongs={this.state.allSongs} allComments={this.state.allComments} userFavoriteSongs={this.state.userFavoriteSongs} allFavorites={this.state.allFavorites}
-      handleComment={this.handleComment}
-      commentInput={this.state.commentInput} />
+      <div className="allSongsParent">
+        <div className="allSongs">
+          <div className="displayParent">
+            <div className="displaySongs">
+          <DisplayMyProfile allUsers={this.state.allUsers} currentUser={this.state.currentUser} allSongs={this.state.allSongs} allComments={this.state.allComments} userFavoriteSongs={this.state.userFavoriteSongs} allFavorites={this.state.allFavorites}
+          handleComment={this.handleComment}
+          commentInput={this.state.commentInput} />
+          </div>
       </div>
+    </div>
+  </div>
     )
   }
 

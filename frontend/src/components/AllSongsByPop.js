@@ -38,9 +38,14 @@ class AllSongsByPop extends React.Component {
 
   render(){
     return(
-      <div className="allSongsByPop">
-      <h1>ALL SONGS BY POPULARITY</h1>
-      <DisplaySongs allSongs={this.state.allSongs} allComments={this.state.allComments}/>
+      <div className="allSongsParent">
+        <div className="allSongs">
+          <div className="displayParent">
+            <div className="displaySongs">
+            <DisplaySongs allSongs={this.state.allSongs} allComments={this.state.allComments}/>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

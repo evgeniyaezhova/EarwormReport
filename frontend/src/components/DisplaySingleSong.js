@@ -23,7 +23,7 @@ const DisplaySingleSong = ({ song, allComments, currentUser }) => {
       </div>
     <div className="postedBy">
     Posted by:
-     <Link to={"/profile/" + song.userid}>{song.username}</Link>
+     <Link to={"/profile/" + song.userid} className="userLink">{song.username}</Link>
     </div>
     <div className="commentsDiv">
     <div className="comments">
@@ -34,8 +34,9 @@ const DisplaySingleSong = ({ song, allComments, currentUser }) => {
       if(comment.song_id === song.songid){
         return (
           <div key={i}>
-          <Link to={"/profile/" + comment.userid}>{comment.username}</Link>: {comment.comment_body}
-          <br/>
+          <Link to={"/profile/" + comment.userid} className="userLink">{comment.username}
+          </Link>
+          : {comment.comment_body}
           </div>
         )
       }

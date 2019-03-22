@@ -93,6 +93,11 @@
 
 }
 
+.userLink{
+  color: #621389;
+  text-decoration: none;
+}
+
 #songImg{
   height: 200px;
   width: 200px;

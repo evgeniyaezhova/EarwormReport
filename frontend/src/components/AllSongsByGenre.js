@@ -62,7 +62,6 @@ class AllSongsByGenre extends React.Component {
   }
 
   render(){
-    // debugger
     return(
       <div className="allSongsParent">
         <div className="allSongs">
