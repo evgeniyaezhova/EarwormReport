@@ -13,14 +13,24 @@ const DisplaySingleSong = ({ song, allComments, currentUser }) => {
     </div>
     <div className="songDetailsParent">
     <div className="songDetails">
-    Title: {song.title}
-    <br/>
+      <div className="detail1">
+        <div className="title">
+          {song.title}
+        </div>
+        <div className="favsCount">
+          {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
+        </div>
+      </div>
+    <div className="postedBy">
     Posted by:
-    <Link to={"/profile/" + song.userid}>{song.username}</Link>
-    <br/>
-    {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
-    <br/>
-    Comments: { allComments.map((comment, i) => {
+     <Link to={"/profile/" + song.userid}>{song.username}</Link>
+    </div>
+    <div className="commentsDiv">
+    <div className="comments">
+    Comments:
+    </div>
+    <div>
+    { allComments.map((comment, i) => {
       if(comment.song_id === song.songid){
         return (
           <div key={i}>
@@ -30,8 +40,16 @@ const DisplaySingleSong = ({ song, allComments, currentUser }) => {
         )
       }
     } )}
-    Add Comment:
-    <AddComment currentUser={currentUser} song={song} allComments={allComments}/>
+    </div>
+    </div>
+      <div className="addComment">
+        <div id="addComment">
+        Add Comment:
+        </div>
+        <div id="commentComp">
+        <AddComment currentUser={currentUser} song={song} allComments={allComments}/>
+        </div>
+      </div>
     </div>
     </div>
   </div>

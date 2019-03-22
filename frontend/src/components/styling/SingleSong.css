@@ -3,25 +3,103 @@
 }
 
 .singleSongDiv {
+  background-color: #c9a0dc;
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border: 1px solid #00f281;
 }
 
 .songDetailsParent {
-  width: 600px;
-  align-items: flex-end;
+  width: 670px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .songDetails {
   text-align: right;
   font-family: 'Baloo Thambi', cursive;
   font-weight: lighter;
-  font-size: 20px;
+  font-size: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+.detail1 {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+}
+
+.title{
+  font-size: 35px;
+  color: white;
+}
+
+.favsCount {
+  display: flex;
+  vertical-align: middle;
+}
+
+.postedBy {
+  display: flex;
+  justify-content: flex-start;
+  padding-bottom: 20px;
+}
+
+.commentsDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comments {
+  vertical-align: middle;
+}
+
+.addComment {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.bigCommentDiv{
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  font: Helvetica;
+}
+
+.commentInput input{
+  width: 370px;
+  height: 25px;
+  background-color: #d1d1d1;
+  border: 0;
+  box-shadow: none;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #00f281;
+  font: Helvetica;
+}
+
+.addCommentButton{
+  background: #d1d1d1;
+
+  border-radius: 20px;
+  font-family: Helvetica;
+  font-weight: bold;
+  font-size: 15px;
+
+}
 
 #songImg{
   height: 200px;
   width: 200px;
+}
+
+#favButton{
+  background-color: #d1d1d1;
+  height: 25px;
+  border-radius: 6px;
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import SelectBar from "./SelectBar";
+import "./styling/AllSongs.css";
+import "./styling/SingleSong.css";
 
 class AllSongsByGenre extends React.Component {
   constructor(){
@@ -62,10 +64,12 @@ class AllSongsByGenre extends React.Component {
   render(){
     // debugger
     return(
-      <div className="allSongsByGenre">
-      <h1>ALL SONGS BY GENRE</h1>
-      <SelectBar allGenres={this.state.allGenres} selectedGenre={this.state.selectedGenre} handleChange={this.handleChange} allSongs={this.state.allSongs} allComments={this.state.allComments}/>
+      <div className="allSongsParent">
+        <div className="allSongs">
+          <h1 className="findGenre">Find songs by genre</h1>
+          <SelectBar allGenres={this.state.allGenres} selectedGenre={this.state.selectedGenre} handleChange={this.handleChange} allSongs={this.state.allSongs} allComments={this.state.allComments}/>
       </div>
+    </div>
     )
   }
 }

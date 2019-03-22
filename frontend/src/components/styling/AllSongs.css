@@ -77,3 +77,17 @@
 .displaySongs {
   width: 900px;
 }
+
+.findGenre{
+  text-align: center;
+}
+
+.selectBar{
+  display: flex;
+  justify-content: center;
+}
+
+.selectBar select{
+  width: 200px;
+  background-color: #d1d1d1;
+}

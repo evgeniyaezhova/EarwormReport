@@ -1,5 +1,7 @@
 import React from "react";
 import DisplaySongs from "./DisplaySongs";
+import "./styling/AllSongs.css";
+import "./styling/SingleSong.css";
 
 const SelectBar = ({ allGenres, selectedGenre, handleChange, allSongs, allComments }) => {
   let genreList = allGenres.map((genre, i) => {
@@ -12,13 +14,22 @@ const SelectBar = ({ allGenres, selectedGenre, handleChange, allSongs, allCommen
 // debugger
 return(
   <div>
-  <select value={selectedGenre} onChange={handleChange} name="selectedGenre">
-  <option />
-  {genreList}
-  </select>
+    <div className="selectBar">
+      <select value={selectedGenre} onChange={handleChange} name="selectedGenre">
+      <option />
+      {genreList}
+      </select>
+    </div>
   <br />
   <br />
-  {selectedGenre ? <DisplaySongs allGenres={allGenres} allSongs={allSongs} allComments={allComments} selectedGenre={selectedGenre}/> : <DisplaySongs allSongs={allSongs} allComments={allComments}/> }
+  <div className="displayParent">
+  <div className="displaySongs">
+  {selectedGenre ?
+    <DisplaySongs allGenres={allGenres} allSongs={allSongs} allComments={allComments} selectedGenre={selectedGenre}/>
+    :
+    <DisplaySongs allSongs={allSongs} allComments={allComments}/> }
+    </div>
+    </div>
   </div>
 )
 

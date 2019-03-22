@@ -39,8 +39,14 @@ render(){
       if(this.state.commentInput){
         this.addComment()
       }}}>
-      <input type="text" placeholder="Add a comment" value={this.state.commentInput} onChange={this.handleComment} />
-      <input type="submit" value="Submit"/>
+      <div className="bigCommentDiv">
+        <div className="commentInput">
+          <input type="text" placeholder="Add a comment" value={this.state.commentInput} onChange={this.handleComment} />
+        </div>
+        <div >
+          <input type="submit" value="Add Comment" className="addCommentButton" />
+        </div>
+      </div>
       </form>
 
   )
