@@ -1,18 +1,17 @@
 import React from "react";
+import DisplaySingleSong from "./DisplaySingleSong";
 
-const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFavorites }) => {
+const DisplayMyProfile = ({ allUsers, currentUser, allSongs, allComments, allFavorites, commentInput, handleComment }) => {
   let songsOfCurrentUser = allSongs.map((song, i) => {
-    if(song.userid === 1){
+    if(song.userid === currentUser.id){
       return(
-        <div key={i} className="getAllSongsByOneUser">
-        <img src= {song.img_url} alt='' id="songImg"/>
-        <br/>
-        Title: {song.title}
-        <br/>
-        Posted by: {song.username}
-        <br/>
-        {song.favoritescount} {song.favoritescount == 1 ? "Favorite" : "Favorites"}
-        <br/>
+        <div key={i}>
+        <DisplaySingleSong
+        song={song}
+        allComments={allComments} currentUser={currentUser}
+        commentInput={commentInput}
+        handleComment={handleComment}
+        />
         </div>
       )
     }

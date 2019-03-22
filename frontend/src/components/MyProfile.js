@@ -10,7 +10,8 @@ class MyProfile extends React.Component {
       currentUser: {},
       allSongs: [],
       allComments: [],
-      allFavorites: []
+      allFavorites: [],
+      commentInput: ""
     }
   }
 
@@ -67,12 +68,20 @@ class MyProfile extends React.Component {
     })
   }
 
+  handleComment = (e) => {
+  this.setState({
+    commentInput: e.target.value
+  })
+  }
+
 
   render(){
     return(
       <div>
       <h1>USER NUMBER ONE</h1>
-      <DisplayMyProfile allUsers={this.state.allUsers} currentUser={this.state.currentUser} allSongs={this.state.allSongs} allComments={this.state.allComments} userFavoriteSongs={this.state.userFavoriteSongs} allFavorites={this.state.allFavorites} />
+      <DisplayMyProfile allUsers={this.state.allUsers} currentUser={this.state.currentUser} allSongs={this.state.allSongs} allComments={this.state.allComments} userFavoriteSongs={this.state.userFavoriteSongs} allFavorites={this.state.allFavorites}
+      handleComment={this.handleComment}
+      commentInput={this.state.commentInput} />
       </div>
     )
   }
