@@ -48,7 +48,7 @@ const DisplaySingleSong = ({ song, allComments, currentUser }) => {
         Add Comment:
         </div>
         <div id="commentComp">
-        <AddComment currentUser={currentUser} song={song} allComments={allComments}/>
+        <AddComment currentUser={currentUser} song={song} allComments={allComments} />
         </div>
       </div>
     </div>

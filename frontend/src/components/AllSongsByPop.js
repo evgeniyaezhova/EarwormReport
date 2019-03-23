@@ -7,13 +7,15 @@ class AllSongsByPop extends React.Component {
     super()
     this.state = {
       allSongs: [],
-      allComments: []
+      allComments: [],
+      currentUser: {}
     }
   }
 
   componentDidMount = () => {
     this.getAllSongsByPop()
     this.getAllComments()
+    this.getAllUsers()
   }
 
   getAllSongsByPop = () => {
@@ -36,13 +38,26 @@ class AllSongsByPop extends React.Component {
     })
   }
 
+  getAllUsers = () => {
+    axios
+    .get("/users")
+    .then(res => {
+      console.log("This is USERS RES: ", res.data.users)
+      console.log("this.is CURRENT USER: ", res.data.users[0])
+      this.setState({
+        currentUser: res.data.users[0]
+      })
+    })
+  }
+
   render(){
     return(
       <div className="allSongsParent">
         <div className="allSongs">
           <div className="displayParent">
             <div className="displaySongs">
-            <DisplaySongs allSongs={this.state.allSongs} allComments={this.state.allComments}/>
+            <DisplaySongs allSongs={this.state.allSongs} allComments={this.state.allComments}
+            currentUser={this.state.currentUser}/>
             </div>
           </div>
         </div>

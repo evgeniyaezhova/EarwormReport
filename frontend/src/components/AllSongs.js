@@ -120,7 +120,6 @@ handleSubmit = (e) => {
                 <DisplaySongs
                 allSongs={this.state.allSongs}
                 allComments={this.state.allComments}
-                
                 currentUser={this.state.currentUser}
                 handleComment={this.handleComment} /> }
             </div>

@@ -18,18 +18,17 @@ this.setState({
 })
 }
 
-async addComment() {
- const {data} = await axios.post("/comments", {
-   comment_body: this.state.commentInput,
-   user_id: this.props.currentUser.id,
-   song_id: this.props.song.songid
- })
+addComment() {
+let newComment = {
+    comment_body: this.state.commentInput,
+    user_id: this.props.currentUser.id,
+    song_id: this.props.song.songid
+  };
+ axios.post("/comments", newComment)
  this.setState({
-   allComments: this.props.allComments.concat(data),
-      // we update the todo list with the new todo
+   allComments: this.props.allComments.concat([newComment]),
    commentInput: ""
-      // we empty out the text input area
-  })
+ })
 }
 
 render(){
