@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import axios from "axios";
 import "./styling/SingleSong.css";
 import AddComment from "./AddComment"
@@ -23,7 +23,7 @@ const DisplaySingleSong = ({ song, allComments, currentUser }) => {
       </div>
     <div className="postedBy">
     Posted by:
-     <Link to={"/profile/" + song.userid} className="userLink">{song.username}</Link>
+     <NavLink to={"/profile/" + song.userid} className="userLink">{song.username}</NavLink>
     </div>
     <div className="commentsDiv">
     <div className="comments">
@@ -34,8 +34,8 @@ const DisplaySingleSong = ({ song, allComments, currentUser }) => {
       if(comment.song_id === song.songid){
         return (
           <div key={i}>
-          <Link to={"/profile/" + comment.userid} className="userLink">{comment.username}
-          </Link>
+          <NavLink to={"/profile/" + comment.userid} className="userLink">{comment.username}
+          </NavLink>
           : {comment.comment_body}
           </div>
         )
