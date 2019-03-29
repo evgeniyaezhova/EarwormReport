@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS earwormreport;
-CREATE DATABASE earwormreport;
+DROP DATABASE IF EXISTS earworm;
+CREATE DATABASE earworm;
 
-\c earwormreport;
+\c earworm;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,

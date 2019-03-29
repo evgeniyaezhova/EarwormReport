@@ -10,6 +10,8 @@ import MyProfile from "./components/MyProfile";
 import UserProfile from "./components/UserProfile";
 import './App.css';
 
+// Honestly, even though a few features are missing (for ex., favorites and adding a new song), the features you DO have implemented are so, so clean and look really good. Great work here.
+
 class App extends Component {
   render() {
     return (
